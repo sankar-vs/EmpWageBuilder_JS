@@ -1,4 +1,4 @@
-//UC 1 IF ELSE Condition
+//UC1 IF ELSE Condition
 {
     const IS_ABSENT = 0;
     let empCheck = Math.floor(Math.random() * 10) % 2;
@@ -9,7 +9,7 @@
     }
 }
 
-//UC 2 Switch Case
+//UC2 Switch Case
 const IS_FULL_TIME = 1;
 const IS_PART_TIME = 2;
 const EMP_RATE_PER_HR = 20;
@@ -31,7 +31,7 @@ const EMP_RATE_PER_HR = 20;
     console.log("UC2:- Employee Wage: " + empWage + " WorkingHours: " + empHrs);
 }
 
-//UC 3 Functions
+//UC3 Functions
 function getWorkingHours(empCheck) {
     switch (empCheck) {
         case IS_FULL_TIME:
@@ -48,9 +48,9 @@ function getWorkingHours(empCheck) {
     console.log("UC3:- Employee Wage: " + empWage  + " WorkingHours: " + getWorkingHours(empCheck));
 }
 
-//UC4 Repitive Statements
+//UC4 Repititive Statements
+const NUM_OF_WORKING_DAYS = 20;
 {
-    const NUM_OF_WORKING_DAYS = 20;
     let totalEmpHrs = 0;
     for (let day = 0; day < NUM_OF_WORKING_DAYS ; day++) {
         let empCheck = Math.floor(Math.random() * 10) % 3;
@@ -58,4 +58,18 @@ function getWorkingHours(empCheck) {
     }
     let empWage = EMP_RATE_PER_HR * totalEmpHrs;
     console.log("UC4:- Employee Wage: " + empWage  + " TotalHours: " + totalEmpHrs);
+}
+
+//UC5 Use While Loop
+{
+    const MAX_HRS_IN_MONTH = 160;
+    let totalEmpHrs = 0;
+    let totalWorkingDays = 0;
+    while (totalEmpHrs <= MAX_HRS_IN_MONTH && totalWorkingDays < NUM_OF_WORKING_DAYS) {
+        let empCheck = Math.floor(Math.random() * 10) % 3;
+        totalEmpHrs += getWorkingHours(empCheck);
+        totalWorkingDays++;
+    }
+    let empWage = EMP_RATE_PER_HR * totalEmpHrs;
+    console.log("UC5:- Employee Wage: " + empWage  + " TotalHours: " + totalEmpHrs + " Days: " + totalWorkingDays);
 }
